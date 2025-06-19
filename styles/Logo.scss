@@ -1,0 +1,37 @@
+// Variables
+$primary-color: #1976d2;
+$text-primary: #333;
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin hover-effect {
+  transition: all $transition-duration ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logo-container {
+  @include flex-center;
+  gap: 8px;
+  cursor: pointer;
+  @include hover-effect;
+  
+  .logo-icon {
+    color: $primary-color;
+    font-size: 32px !important;
+  }
+  
+  .logo-text {
+    color: $text-primary;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1.5rem;
+  }
+} 

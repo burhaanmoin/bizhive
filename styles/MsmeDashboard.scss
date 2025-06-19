@@ -1,0 +1,311 @@
+// Variables from AdminDashboard theme
+$background-dark: #121212;
+$card-bg: linear-gradient(145deg, #1e1e1e, #2d2d2d);
+$primary-color: #2196f3;
+$secondary-color: #64b5f6;
+$success-color: #4caf50;
+$warning-color: #ff9800;
+$text-light: #ffffff;
+$text-secondary: rgba(255, 255, 255, 0.7);
+$border-color: rgba(255, 255, 255, 0.1);
+$transition: all 0.3s ease;
+
+.msme-dashboard {
+  min-height: 100vh;
+  background-color: $background-dark;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(33, 150, 243, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(76, 175, 80, 0.05) 0%, transparent 20%);
+  padding: 24px 0;
+
+  .dashboard-title {
+    font-size: 2.2rem;
+    margin-bottom: 32px;
+    background: linear-gradient(45deg, $text-light, #f0f0f0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+
+    .title-highlight {
+      background: linear-gradient(45deg, $primary-color, $secondary-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .section-grid {
+    margin-bottom: 32px;
+  }
+
+  .scheme-matcher,
+  .matched-schemes,
+  .supplier-network,
+  .tool-card {
+    background: $card-bg;
+    border: 1px solid $border-color;
+    border-radius: 15px;
+    padding: 24px;
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    background: linear-gradient(45deg, $text-light, #ccc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .eligibility-form {
+    .form-field {
+      margin-bottom: 24px;
+
+      .MuiTypography-subtitle2 {
+        color: $text-secondary;
+        margin-bottom: 8px;
+      }
+
+      .MuiRadio-root,
+      .MuiSelect-root {
+        color: $text-light;
+      }
+
+      .MuiOutlinedInput-root {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        .MuiOutlinedInput-notchedOutline {
+          border-color: $border-color;
+        }
+      }
+    }
+  }
+
+  .schemes-list {
+    .scheme-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      transition: $transition;
+
+      &:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .scheme-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .apply-button {
+        margin-top: 16px;
+        background: linear-gradient(45deg, $primary-color, $secondary-color);
+        
+        &:hover {
+          box-shadow: 0 4px 15px rgba($primary-color, 0.3);
+        }
+      }
+    }
+  }
+
+  .supplier-network {
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .map-container {
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 16px;
+      border: 1px solid $border-color;
+
+      .leaflet-container {
+        background: $card-bg;
+      }
+
+      .leaflet-popup-content-wrapper {
+        background: $card-bg;
+        color: $text-light;
+        border-radius: 8px;
+      }
+
+      .leaflet-popup-tip {
+        background: $card-bg;
+      }
+
+      .map-popup {
+        padding: 8px;
+        text-align: center;
+
+        .MuiButton-root {
+          margin-top: 8px;
+          color: $primary-color;
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .supplier-grid {
+      margin-top: 16px;
+    }
+
+    .supplier-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: $transition;
+
+      &:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .supplier-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+
+        .type-chip {
+          background: rgba($primary-color, 0.1);
+          color: $primary-color;
+          border: 1px solid rgba($primary-color, 0.2);
+        }
+      }
+
+      .supplier-details {
+        margin-bottom: 16px;
+        
+        .MuiTypography-body2 {
+          margin-bottom: 4px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+      }
+
+      .supplier-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+
+        .contact-btn {
+          border-color: rgba($success-color, 0.5);
+          color: $success-color;
+          
+          &:hover {
+            background: rgba($success-color, 0.1);
+            border-color: $success-color;
+          }
+        }
+
+        .direction-btn {
+          background: linear-gradient(45deg, $primary-color, $secondary-color);
+          flex: 1;
+          
+          &:hover {
+            box-shadow: 0 4px 15px rgba($primary-color, 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  .tools-grid {
+    .tool-card {
+      text-align: center;
+      padding: 32px;
+
+      .tool-icon {
+        font-size: 48px;
+        color: $primary-color;
+        margin-bottom: 16px;
+      }
+
+      .MuiButton-contained {
+        margin-top: 16px;
+        background: linear-gradient(45deg, $primary-color, $secondary-color);
+        
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba($primary-color, 0.3);
+        }
+      }
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 960px) {
+  .msme-dashboard {
+    padding: 16px 0;
+
+    .dashboard-title {
+      font-size: 1.8rem;
+    }
+
+    .supplier-network {
+      .map-container {
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .msme-dashboard {
+    .dashboard-title {
+      font-size: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+    }
+
+    .tool-card {
+      padding: 24px;
+
+      .tool-icon {
+        font-size: 36px;
+      }
+    }
+
+    .supplier-network {
+      .section-header {
+        flex-direction: column;
+        gap: 16px;
+        
+        .view-toggle {
+          width: 100%;
+          
+          button {
+            width: 100%;
+          }
+        }
+      }
+      
+      .supplier-actions {
+        flex-direction: column;
+      }
+    }
+  }
+}

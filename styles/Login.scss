@@ -1,0 +1,213 @@
+// Variables
+$primary-blue: #2196f3;
+$background-dark: #000000;
+$card-background: #111111;
+$text-light: rgba(255, 255, 255, 0.87);
+$text-secondary: rgba(255, 255, 255, 0.6);
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+@mixin float-effect {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.login-container {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+  url('../assets/business_bg.jpg');  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-paper {
+  background: $background-dark;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px !important;
+  padding: 40px !important;
+  animation: fadeIn 0.6s ease-out;
+  box-shadow: 0 0 20px rgba($primary-blue, 0.2);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 25px;
+
+  .user-icon {
+    color: $primary-blue;
+    font-size: 40px !important;
+    margin-bottom: 20px;
+  }
+
+  .login-title {
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+    color: $text-light;
+
+    .biz {
+      color: blue !important;
+    }
+
+    .hive {
+      color: $primary-blue;
+    }
+  }
+
+  .login-subtitle {
+    color: $text-secondary !important;
+    font-size: 16px !important;
+    margin-bottom: 20px !important;
+  }
+}
+
+.login-form {
+  .login-input {
+    margin-bottom: 20px !important;
+    
+    .MuiOutlinedInput-root {
+      border-radius: 8px;
+      background: transparent;
+      
+      input {
+        padding: 12px 16px;
+        color: $text-light !important;
+        font-size: 14px;
+        
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+      
+      fieldset {
+        border-color: $primary-blue;
+        border-width: 1px;
+        opacity: 0.5;
+      }
+      
+      &:hover fieldset {
+        border-color: $primary-blue;
+        opacity: 0.8;
+      }
+      
+      &.Mui-focused fieldset {
+        border-color: $primary-blue;
+        border-width: 2px;
+        opacity: 1;
+      }
+    }
+
+    .MuiInputLabel-root {
+      color: $primary-blue;
+      font-size: 14px;
+    }
+  }
+}
+
+.login-button {
+  width: 100% !important;
+  margin-top: 20px !important;
+  padding: 12px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  background-color: $primary-blue !important;
+  color: white !important;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background-color: darken($primary-blue, 5%) !important;
+  }
+}
+
+.forgot-password {
+  margin-top: 16px !important;
+  text-align: center;
+  
+  a {
+    color: $primary-blue;
+    text-decoration: none;
+    font-size: 14px;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.signup-section {
+  margin-top: 20px;
+  text-align: center;
+
+  .signup-text {
+    color: $text-secondary !important;
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .signup-link {
+    color: $primary-blue !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Error Handling
+.error-alert {
+  margin-bottom: 16px !important;
+  background-color: rgba(244, 67, 54, 0.1) !important;
+  color: #f44336 !important;
+  border-radius: 4px !important;
+}
+
+// Media Queries
+@media (max-width: 600px) {
+  .login-paper {
+    padding: 24px 20px !important;
+  }
+
+  .login-header {
+    .login-title {
+      font-size: 24px !important;
+    }
+  }
+}
+
+  .login-button {
+    padding: 12px !important;
+    font-size: 1rem !important;
+  }
+
+
+// Error Handling
+.error-alert {
+  margin-bottom: 20px !important;
+  background-color: rgba(244, 67, 54, 0.1) !important;
+  color: #f44336 !important;
+  border-radius: 8px !important;
+  
+  .MuiAlert-icon {
+    color: #f44336 !important;
+  }
+}

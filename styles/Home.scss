@@ -1,0 +1,987 @@
+// Variables
+$primary-blue: #1976d2;
+$secondary-teal: #e0f2fe;
+$accent-yellow: #fff9c4;
+$background-main: #f7fbff;
+$background-alt: #e0f2fe;
+$card-background: #fff;
+$heading-color: #1a237e;
+$text-color: #374151;
+$text-secondary: #5c6b82;
+$gradient-primary: linear-gradient(135deg, #e3f2fd 0%, #f7fbff 100%);
+$transition-duration: 0.3s;
+
+.home-container {
+  background-color: $background-main;
+  color: $text-color;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: none;
+    pointer-events: none;
+  }
+}
+
+// Hero Section
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 0;
+  background: $gradient-primary;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $primary-blue;
+    opacity: 0.15;
+  }
+  
+  .hero-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: $heading-color;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    filter: none;
+    
+    span {
+      display: block;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s forwards;
+      
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.35rem;
+    color: $text-secondary;
+    margin-bottom: 48px;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s forwards 0.6s;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 24px;
+    opacity: 0;
+    animation: fadeSlideUp 0.8s forwards 0.8s;
+    
+    .get-started-btn {
+      background: $primary-blue;
+      color: #fff;
+      padding: 16px 40px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba($primary-blue, 0.10);
+      transition: all $transition-duration cubic-bezier(0.4, 0, 0.2, 1);
+      
+      &:hover {
+        background: darken($primary-blue, 8%);
+        box-shadow: 0 8px 25px rgba($primary-blue, 0.13);
+      }
+      
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+    
+    .login-btn {
+      color: $primary-blue;
+      border: 2px solid $primary-blue;
+      padding: 16px 40px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: 30px;
+      background: #fff;
+      transition: all $transition-duration cubic-bezier(0.4, 0, 0.2, 1);
+      
+      &:hover {
+        background: $secondary-teal;
+        border-color: darken($primary-blue, 8%);
+        color: darken($primary-blue, 8%);
+      }
+      
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+  
+  .hero-image-container {
+    position: relative;
+    padding: 30px;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards 0.5s;
+    
+    .hero-image {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba($primary-blue, 0.10);
+      background: $secondary-teal;
+      border: 2px solid $primary-blue;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px rgba($primary-blue, 0.13);
+      }
+    }
+  }
+}
+
+// Stats Section
+.stats-section {
+  padding: 80px 0;
+  background: $background-alt;
+  
+  .stat-card {
+    text-align: center;
+    padding: 24px;
+    background: $card-background;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba($primary-blue, 0.07);
+    border: 1px solid $secondary-teal;
+    
+    .stat-number {
+      color: $primary-blue;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      color: $text-secondary;
+    }
+  }
+}
+
+// MSME Impact Section
+.msme-impact-section {
+  padding: 100px 0;
+  position: relative;
+  background: $card-background;
+  .MuiGrid-container {
+    position: relative;
+  }
+  .impact-content {
+    .impact-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: $heading-color;
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: unset;
+    }
+    .impact-description {
+      color: $text-secondary;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    .impact-points {
+      display: grid;
+      gap: 32px;
+      .impact-point {
+        display: flex;
+        gap: 20px;
+        padding: 24px;
+        background: $secondary-teal;
+        border-radius: 16px;
+        border: 1px solid rgba($primary-blue, 0.08);
+        transition: all $transition-duration ease;
+        &:hover {
+          transform: translateY(-5px);
+          background: $background-main;
+          border-color: rgba($primary-blue, 0.18);
+          box-shadow: 0 8px 32px rgba($primary-blue, 0.07);
+        }
+        .impact-icon {
+          color: $primary-blue;
+          font-size: 2.5rem;
+          flex-shrink: 0;
+        }
+        h6 {
+          color: $text-color;
+          margin-bottom: 8px;
+        }
+        .MuiTypography-body2 {
+          color: $text-secondary;
+          line-height: 1.6;
+        }
+      }
+    }
+    .impact-expand {
+      margin-top: 40px;
+      .expand-button {
+        color: $primary-blue;
+        font-weight: 600;
+        padding: 12px 32px;
+        border: 2px solid rgba($primary-blue, 0.18);
+        border-radius: 40px;
+        background: #fff;
+        transition: all $transition-duration cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover {
+          background: $background-main;
+          border-color: $primary-blue;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba($primary-blue, 0.10);
+        }
+        .MuiSvgIcon-root {
+          transition: transform $transition-duration ease;
+          margin-left: 8px;
+        }
+        &:hover .MuiSvgIcon-root {
+          transform: translateY(2px);
+        }
+      }
+      .expanded-content {
+        margin-top: 40px;
+        padding: 40px;
+        background: #fff;
+        border-radius: 24px;
+        border: 1px solid rgba($primary-blue, 0.10);
+        box-shadow: 0 20px 40px rgba($primary-blue, 0.07);
+        transition: all $transition-duration cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  }
+  .impact-visual {
+    position: relative;
+    height: fit-content;
+    .chart-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+      background: $background-main;
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba($primary-blue, 0.08);
+      .chart-item {
+        text-align: center;
+        .chart-progress {
+          background: #fff;
+          border-radius: 16px;
+          padding: 24px;
+          border: 1px solid rgba($primary-blue, 0.10);
+          transition: all $transition-duration ease;
+          &:hover {
+            transform: translateY(-5px);
+            border-color: $primary-blue;
+          }
+          h3 {
+            color: $primary-blue;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+          }
+          .MuiTypography-subtitle1 {
+            color: $text-secondary;
+          }
+        }
+      }
+    }
+    .impact-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      .impact-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba($primary-blue, 0.10);
+        transition: all $transition-duration ease;
+        transform: translateZ(0);
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+}
+
+// Features Section
+.features-section {
+  padding: 80px 0;
+  background: $background-main;
+  .section-title {
+    text-align: center;
+    margin-bottom: 48px;
+    color: $primary-blue;
+  }
+  .feature-card {
+    background: #fff;
+    border: 1px solid rgba($primary-blue, 0.10);
+    transition: transform $transition-duration;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 32px rgba($primary-blue, 0.07);
+    }
+    .feature-icon {
+      color: $primary-blue;
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .feature-title {
+      color: $text-color;
+      margin-bottom: 8px;
+    }
+    .feature-description {
+      color: $text-secondary;
+    }
+  }
+}
+
+// Benefits Section
+.benefits-section {
+  padding: 80px 0;
+  background: linear-gradient(-45deg, $background-main, #e3f0ff 100%);
+  .section-title {
+    text-align: center;
+    margin-bottom: 48px;
+    color: $primary-blue;
+  }
+  .benefit-card {
+    background: #fff;
+    border: 1px solid rgba($primary-blue, 0.10);
+    transition: transform $transition-duration;
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 32px rgba($primary-blue, 0.07);
+    }
+    .benefit-icon {
+      color: $primary-blue;
+      margin-bottom: 16px;
+    }
+    .benefit-title {
+      color: $text-color;
+      margin-bottom: 8px;
+    }
+    .benefit-description {
+      color: $text-secondary;
+      margin-bottom: 16px;
+    }
+    .benefit-points {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        color: $text-secondary;
+        .check-icon {
+          color: $primary-blue;
+          font-size: 1.2rem;
+          margin-right: 8px;
+        }
+      }
+    }
+    .benefit-image {
+      transition: transform $transition-duration;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// CTA Section
+.cta-section {
+  padding: 100px 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba($primary-blue, 0.1), transparent);
+  
+  .cta-title {
+    color: $text-color;
+    margin-bottom: 16px;
+  }
+  
+  .cta-subtitle {
+    color: $text-secondary;
+    margin-bottom: 32px;
+  }
+  
+  .cta-button {
+    background: $primary-blue;
+    padding: 16px 48px;
+    font-size: 1.2rem;
+    
+    &:hover {
+      background: darken($primary-blue, 10%);
+    }
+  }
+}
+
+// Success Stories Section
+.success-section {
+  padding: 80px 0;
+  background: $background-main;
+  .section-title {
+    text-align: center;
+    margin-bottom: 48px;
+    color: $primary-blue;
+  }
+  .story-card {
+    background: #fff;
+    border: 1px solid rgba($primary-blue, 0.10);
+    border-radius: 12px;
+    overflow: hidden;
+    .story-image {
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    .story-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 16px 0 8px;
+    }
+    .story-description {
+      color: $text-secondary;
+      margin-bottom: 16px;
+    }
+    .read-more-btn {
+      margin-top: 16px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      &:hover {
+        background: rgba($primary-blue, 0.07);
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+// Government Schemes Section
+.schemes-section {
+  padding: 80px 0;
+  background: $background-main;
+  .section-title {
+    text-align: center;
+    margin-bottom: 48px;
+    color: $primary-blue;
+  }
+  .scheme-card {
+    background: #fff;
+    border: 1px solid rgba($primary-blue, 0.10);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba($primary-blue, 0.05);
+    transition: transform $transition-duration;
+    &:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 32px rgba($primary-blue, 0.10);
+    }
+    .MuiTypography-h6 {
+      color: $primary-blue;
+      margin-bottom: 8px;
+    }
+    .MuiTypography-body2 {
+      color: $text-secondary;
+    }
+  }
+}
+
+// Eligibility Checker Section
+.eligibility-section {
+  padding: 80px 0;
+  background: $background-main;
+  .section-title {
+    text-align: center;
+    margin-bottom: 32px;
+    color: $primary-blue;
+  }
+  .eligibility-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 24px;
+  }
+  .eligibility-form {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 24px rgba($primary-blue, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .eligibility-input {
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba($primary-blue, 0.10);
+      background: $background-main;
+      color: $text-color;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      outline: none;
+      transition: border-color $transition-duration;
+      &:focus {
+        border-color: $primary-blue;
+        background: #fff;
+      }
+    }
+    .eligibility-btn {
+      margin-top: 16px;
+      background: $gradient-primary;
+      color: #fff;
+      font-weight: 600;
+      padding: 14px 40px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba($primary-blue, 0.10);
+      transition: all $transition-duration cubic-bezier(0.4, 0, 0.2, 1);
+      &:hover {
+        background: $primary-blue;
+        color: #fff;
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 8px 25px rgba($primary-blue, 0.13);
+      }
+    }
+  }
+}
+
+// Resource Center Section
+.resources-section {
+  padding: 80px 0;
+  background: $background-main;
+  .section-title {
+    text-align: center;
+    margin-bottom: 48px;
+    color: $primary-blue;
+  }
+  .resource-card {
+    background: #fff;
+    border: 1px solid rgba($primary-blue, 0.10);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba($primary-blue, 0.05);
+    transition: transform $transition-duration;
+    &:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 8px 32px rgba($primary-blue, 0.10);
+    }
+    .MuiTypography-h6 {
+      color: $primary-blue;
+      margin-bottom: 8px;
+    }
+    .MuiTypography-body2 {
+      color: $text-secondary;
+      margin-bottom: 16px;
+    }
+    .resource-btn {
+      background: $gradient-primary;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 10px 28px;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba($primary-blue, 0.10);
+      transition: all $transition-duration cubic-bezier(0.4, 0, 0.2, 1);
+      &:hover {
+        background: $primary-blue;
+        color: #fff;
+        transform: translateY(-2px) scale(1.01);
+        box-shadow: 0 6px 18px rgba($primary-blue, 0.13);
+      }
+    }
+  }
+}
+
+// Community & Support Section
+.community-section {
+  padding: 80px 0;
+  background: $background-main;
+  .section-title {
+    text-align: center;
+    margin-bottom: 24px;
+    color: $primary-blue;
+  }
+  .community-description {
+    text-align: center;
+    color: $text-secondary;
+    margin-bottom: 32px;
+    font-size: 1.15rem;
+  }
+  .community-actions {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    .community-btn {
+      color: $primary-blue;
+      border: 2px solid $primary-blue;
+      border-radius: 30px;
+      padding: 12px 32px;
+      font-weight: 600;
+      font-size: 1rem;
+      background: #fff;
+      transition: all $transition-duration cubic-bezier(0.4, 0, 0.2, 1);
+      &:hover {
+        background: $primary-blue;
+        color: #fff;
+        border-color: $primary-blue;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba($primary-blue, 0.10);
+      }
+    }
+  }
+}
+
+// Trust & Security Section
+.trust-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f5faff 0%, #e3f0ff 100%);
+  .section-title {
+    text-align: center;
+    margin-bottom: 48px;
+    color: $primary-blue;
+  }
+  .trust-badges-row {
+    margin-top: 24px;
+    flex-wrap: wrap;
+    gap: 32px 24px;
+    justify-content: center;
+  }
+  .trust-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, rgba($primary-blue, 0.13), rgba($card-background, 0.95));
+    border-radius: 20px;
+    padding: 36px 20px;
+    box-shadow: 0 6px 32px rgba($primary-blue, 0.10);
+    border: 2px solid rgba($primary-blue, 0.18);
+    margin-bottom: 16px;
+    min-width: 210px;
+    min-height: 180px;
+    transition: box-shadow 0.3s, border-color 0.3s, background 0.3s, transform 0.3s;
+    .trust-logo {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 2px 8px rgba($primary-blue, 0.13));
+      transition: filter 0.3s;
+    }
+    .MuiTypography-body2 {
+      color: $text-color;
+      text-align: center;
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    &:hover {
+      background: linear-gradient(135deg, rgba($primary-blue, 0.18), rgba($card-background, 1));
+      border-color: $primary-blue;
+      box-shadow: 0 12px 36px 0 rgba($primary-blue, 0.18), 0 0 8px 2px $primary-blue;
+      transform: translateY(-4px) scale(1.03);
+      .trust-logo {
+        filter: drop-shadow(0 4px 16px rgba($primary-blue, 0.18));
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes pulse {
+  0%, 100% {
+    transform: rotate(-3deg) scale(1.03);
+    opacity: 0.5;
+    filter: blur(20px);
+  }
+  50% {
+    transform: rotate(-3deg) scale(1.08);
+    opacity: 0.8;
+    filter: blur(15px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) translateY(-100%) rotate(30deg);
+  }
+  15% {
+    opacity: 0.4;
+  }
+  25%, 75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%) translateY(100%) rotate(30deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateX(0) rotateY(0);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba($primary-blue, 0.1),
+      0 0 20px rgba($primary-blue, 0.2);
+  }
+  50% {
+    transform: translateY(-20px) rotateX(2deg) rotateY(-2deg);
+    box-shadow: 
+      0 30px 50px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba($primary-blue, 0.2),
+      0 0 30px rgba($primary-blue, 0.3);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Media Queries
+@media (max-width: 960px) {
+  .hero-section {
+    .hero-title {
+      font-size: 3.5rem;
+    }
+    
+    .hero-image-container {
+      padding: 20px;
+      
+      .hero-image {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+  }
+  
+  .msme-impact-section {
+    padding: 60px 0;
+    
+    .impact-content {
+      .impact-title {
+        font-size: 2.4rem;
+      }
+      
+      .impact-points {
+        gap: 24px;
+      }
+    }
+    
+    .impact-visual {
+      margin-top: 40px;
+      
+      .impact-image {
+        height: 350px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 80px 0;
+    
+    .hero-title {
+      font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.15rem;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      
+      .get-started-btn,
+      .login-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    
+    .hero-image-container {
+      padding: 15px;
+      margin-top: 30px;
+      
+      .hero-image {
+        max-width: 100%;
+      }
+    }
+  }
+  
+  .stats-section,
+  .features-section,
+  .benefits-section,
+  .cta-section {
+    padding: 40px 0;
+  }
+
+  .success-section {
+    padding: 40px 0;
+    
+    .story-card {
+      margin-bottom: 20px;
+    }
+  }
+  
+  .msme-impact-section {
+    padding: 40px 0;
+    
+    .impact-content {
+      .impact-title {
+        font-size: 2rem;
+      }
+      
+      .impact-description {
+        font-size: 1.1rem;
+      }
+      
+      .impact-points {
+        gap: 16px;
+        
+        .impact-point {
+          padding: 16px;
+        }
+      }
+      
+      .impact-expand {
+        .expanded-content {
+          padding: 20px;
+          
+          .impact-stats-detailed {
+            grid-template-columns: 1fr;
+            gap: 16px;
+            
+            .stat-item {
+              padding: 16px;
+              background: rgba($card-background, 0.5);
+              border-radius: 12px;
+            }
+          }
+        }
+      }
+    }
+    
+    .impact-visual {
+      margin-top: 30px;
+      
+      .chart-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 16px;
+      }
+      
+      .impact-image {
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .msme-impact-section {
+    .impact-expand {
+      .expanded-content {
+        padding: 32px;
+        
+        .scheme-list {
+          grid-template-columns: 1fr;
+        }
+        
+        .impact-stats-detailed {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .msme-impact-section {
+    .impact-expand {
+      .expand-button {
+        width: 100%;
+        padding: 16px;
+      }
+      
+      .expanded-content {
+        padding: 24px;
+        margin-top: 24px;
+        
+        .expanded-subtitle {
+          font-size: 1.3rem;
+          
+          &::after {
+            display: none;
+          }
+        }
+        
+        .scheme-list li {
+          padding: 20px;
+        }
+        
+        .impact-stats-detailed {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          
+          .stat-item {
+            padding: 24px;
+            
+            h4 {
+              font-size: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+} 

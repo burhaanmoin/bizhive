@@ -1,0 +1,71 @@
+$primary-blue: #2196f3;
+$background-dark: #000000;
+$text-light: #FFFFFF;
+
+.splash-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: $background-dark;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.splash-content {
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+  
+  .splash-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    
+    .biz {
+      color: $text-light;
+    }
+    
+    .hive {
+      color: $primary-blue;
+    }
+  }
+  
+  .splash-subtitle {
+    color: $text-light;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.5s forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .splash-content {
+    .splash-title {
+      font-size: 3rem;
+    }
+    
+    .splash-subtitle {
+      font-size: 1.2rem;
+    }
+  }
+} 

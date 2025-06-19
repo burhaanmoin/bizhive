@@ -1,0 +1,107 @@
+// Variables
+$primary-color: #1976d2;
+$secondary-color: #dc004e;
+$background-color: #f5f5f5;
+$text-primary: #333;
+$text-secondary: #666;
+$white: #fff;
+$transition-duration: 0.3s;
+
+// Mixins
+@mixin card-hover {
+  transition: all $transition-duration ease;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-container {
+  min-height: 100vh;
+  background-color: $background-color;
+  padding: 24px;
+  
+  .dashboard-header {
+    margin-bottom: 24px;
+    
+    .header-title {
+      color: $text-primary;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .header-subtitle {
+      color: $text-secondary;
+    }
+  }
+  
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .stat-card {
+    background-color: $white;
+    border-radius: 12px;
+    padding: 24px;
+    @include card-hover;
+    
+    .stat-icon {
+      color: $primary-color;
+      font-size: 40px !important;
+      margin-bottom: 16px;
+    }
+    
+    .stat-title {
+      color: $text-secondary;
+      margin-bottom: 8px;
+    }
+    
+    .stat-value {
+      color: $text-primary;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+  
+  .data-table {
+    background-color: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    
+    .table-header {
+      background-color: $primary-color;
+      color: $white;
+      
+      .MuiTableCell-head {
+        color: $white;
+        font-weight: 600;
+      }
+    }
+    
+    .table-row {
+      &:hover {
+        background-color: rgba($primary-color, 0.05);
+      }
+    }
+  }
+}
+
+// Media Queries
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 16px;
+    
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+} 
